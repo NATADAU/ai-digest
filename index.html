@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -7,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
   <div class="bg-grid"></div>
@@ -66,24 +67,160 @@
           <h2 class="section-title">Что внутри выпуска</h2>
         </div>
         <div class="cards-grid">
-          {% for article in articles %}
-          <a href="{{ article.url }}" target="_blank" rel="noopener" class="card reveal" style="--card-color: {{ article.color }}">
-            <div class="card-glow" style="--glow-color: {{ article.color }}"></div>
+          
+          <a href="https://habr.com/ru/companies/ranvik/articles/1032296/" target="_blank" rel="noopener" class="card reveal" style="--card-color: #FF6B6B">
+            <div class="card-glow" style="--glow-color: #FF6B6B"></div>
             <div class="card-top">
-              <span class="card-tag" style="background: {{ article.color }}22; color: {{ article.color }}">{{ article.tag }}</span>
-              <span class="card-level">{{ article.level }}</span>
+              <span class="card-tag" style="background: #FF6B6B22; color: #FF6B6B">Музыка</span>
+              <span class="card-level">Просто</span>
             </div>
-            <h3 class="card-title">{{ article.title }}</h3>
-            <p class="card-summary">{{ article.summary }}</p>
+            <h3 class="card-title">Нейросеть для создания песни ИИ бесплатно: лучшие нейросети для музыки</h3>
+            <p class="card-summary">ИИ не просто склеивает звуки — создаёт мелодию, ритм, аранжировку и вокал по текстовому описанию.</p>
             <div class="card-footer">
               <span class="card-time">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                {{ article.read_time }}
+                11 мин
               </span>
-              <span class="card-arrow" style="color: {{ article.color }}">→</span>
+              <span class="card-arrow" style="color: #FF6B6B">→</span>
             </div>
           </a>
-          {% endfor %}
+          
+          <a href="https://habr.com/ru/articles/1032294/" target="_blank" rel="noopener" class="card reveal" style="--card-color: #4ECDC4">
+            <div class="card-glow" style="--glow-color: #4ECDC4"></div>
+            <div class="card-top">
+              <span class="card-tag" style="background: #4ECDC422; color: #4ECDC4">Промпты</span>
+              <span class="card-level">Просто</span>
+            </div>
+            <h3 class="card-title">Штампы LLM. Разбираю с новой точки зрения</h3>
+            <p class="card-summary">Как эксперты определяют LLM по штампам в тексте и почему все просят исключить их из генерации.</p>
+            <div class="card-footer">
+              <span class="card-time">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                4 мин
+              </span>
+              <span class="card-arrow" style="color: #4ECDC4">→</span>
+            </div>
+          </a>
+          
+          <a href="https://habr.com/ru/articles/1032262/" target="_blank" rel="noopener" class="card reveal" style="--card-color: #FFE66D">
+            <div class="card-glow" style="--glow-color: #FFE66D"></div>
+            <div class="card-top">
+              <span class="card-tag" style="background: #FFE66D22; color: #FFE66D">Философия</span>
+              <span class="card-level">Просто</span>
+            </div>
+            <h3 class="card-title">Как Ричард Докинз решил, что ИИ разумен</h3>
+            <p class="card-summary">Тест Тьюринга, игра в подражание и почему некоторые люди считают, что машины уже мыслят.</p>
+            <div class="card-footer">
+              <span class="card-time">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                7 мин
+              </span>
+              <span class="card-arrow" style="color: #FFE66D">→</span>
+            </div>
+          </a>
+          
+          <a href="https://habr.com/ru/companies/kemp_ai/articles/1032238/" target="_blank" rel="noopener" class="card reveal" style="--card-color: #A78BFA">
+            <div class="card-glow" style="--glow-color: #A78BFA"></div>
+            <div class="card-top">
+              <span class="card-tag" style="background: #A78BFA22; color: #A78BFA">Медицина</span>
+              <span class="card-level">Просто</span>
+            </div>
+            <h3 class="card-title">Доктор AI-болит: Как ИИ изменяет ландшафт медицины?</h3>
+            <p class="card-summary">ИИ приходит на помощь, чтобы врачи сосредоточились на главном, а не на бумагах.</p>
+            <div class="card-footer">
+              <span class="card-time">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                5 мин
+              </span>
+              <span class="card-arrow" style="color: #A78BFA">→</span>
+            </div>
+          </a>
+          
+          <a href="https://habr.com/ru/companies/tsnis/articles/1032248/" target="_blank" rel="noopener" class="card reveal" style="--card-color: #F472B6">
+            <div class="card-glow" style="--glow-color: #F472B6"></div>
+            <div class="card-top">
+              <span class="card-tag" style="background: #F472B622; color: #F472B6">Бизнес</span>
+              <span class="card-level">Просто</span>
+            </div>
+            <h3 class="card-title">API нейросетей для бизнеса в SpeShu.AI</h3>
+            <p class="card-summary">Как российскому бизнесу интегрировать ИИ через API с оплатой в рублях и официальной бухгалтерией.</p>
+            <div class="card-footer">
+              <span class="card-time">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                4 мин
+              </span>
+              <span class="card-arrow" style="color: #F472B6">→</span>
+            </div>
+          </a>
+          
+          <a href="https://habr.com/ru/articles/1032276/" target="_blank" rel="noopener" class="card reveal" style="--card-color: #38BDF8">
+            <div class="card-glow" style="--glow-color: #38BDF8"></div>
+            <div class="card-top">
+              <span class="card-tag" style="background: #38BDF822; color: #38BDF8">Дайджест</span>
+              <span class="card-level">Просто</span>
+            </div>
+            <h3 class="card-title">Frontend Status: свежий дайджест фронтенда и AI</h3>
+            <p class="card-summary">AI из вау-демо переходит в дисциплину: промпт-пайплайны и практики Claude Code для предсказуемого результата.</p>
+            <div class="card-footer">
+              <span class="card-time">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                8 мин
+              </span>
+              <span class="card-arrow" style="color: #38BDF8">→</span>
+            </div>
+          </a>
+          
+          <a href="https://habr.com/ru/companies/otus/articles/1029676/" target="_blank" rel="noopener" class="card reveal" style="--card-color: #FB923C">
+            <div class="card-glow" style="--glow-color: #FB923C"></div>
+            <div class="card-top">
+              <span class="card-tag" style="background: #FB923C22; color: #FB923C">Код</span>
+              <span class="card-level">Средне</span>
+            </div>
+            <h3 class="card-title">Сделаем Python безопасным… снова</h3>
+            <p class="card-summary">Как перехватить выполнение Python-кода, запретить опасные вызовы и построить систему контрактов.</p>
+            <div class="card-footer">
+              <span class="card-time">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                33 мин
+              </span>
+              <span class="card-arrow" style="color: #FB923C">→</span>
+            </div>
+          </a>
+          
+          <a href="https://habr.com/ru/articles/1032262/" target="_blank" rel="noopener" class="card reveal" style="--card-color: #34D399">
+            <div class="card-glow" style="--glow-color: #34D399"></div>
+            <div class="card-top">
+              <span class="card-tag" style="background: #34D39922; color: #34D399">Сознание</span>
+              <span class="card-level">Просто</span>
+            </div>
+            <h3 class="card-title">Как Ричард Докинз решил, что ИИ разумен</h3>
+            <p class="card-summary">Современные комментаторы игнорируют детали оригинальной игры Тьюринга — но будущее уже наступило.</p>
+            <div class="card-footer">
+              <span class="card-time">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                7 мин
+              </span>
+              <span class="card-arrow" style="color: #34D399">→</span>
+            </div>
+          </a>
+          
+          <a href="https://habr.com/ru/articles/1032310/" target="_blank" rel="noopener" class="card reveal" style="--card-color: #F87171">
+            <div class="card-glow" style="--glow-color: #F87171"></div>
+            <div class="card-top">
+              <span class="card-tag" style="background: #F8717122; color: #F87171">Нейронаука</span>
+              <span class="card-level">Средне</span>
+            </div>
+            <h3 class="card-title">SmileLadder. Цикл «Память и мозг». Как формируется память</h3>
+            <p class="card-summary">Как работает механизм внимания и как мозг формирует память — ответ на вопрос, как мы справляемся с потоком задач.</p>
+            <div class="card-footer">
+              <span class="card-time">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                6 мин
+              </span>
+              <span class="card-arrow" style="color: #F87171">→</span>
+            </div>
+          </a>
+          
         </div>
       </div>
     </section>
@@ -115,6 +252,6 @@
     </div>
   </footer>
 
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script src="/static/script.js"></script>
 </body>
 </html>
