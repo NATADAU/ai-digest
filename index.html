@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Дайджест — Просто об искусственном интеллекте</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <span class="logo-icon">✦</span>
+        AI Дайджест
+      </a>
+      <nav class="nav">
+        <a href="#cards" class="nav-link">Статьи</a>
+        <a href="#about" class="nav-link">О проекте</a>
+        <a href="#" class="btn-subscribe">Подписаться</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-badge">Выпуск #1 — Май 2026</div>
+        <h1 class="hero-title">
+          Искусственный интеллект
+          <span class="gradient-text">без сложных слов</span>
+        </h1>
+        <p class="hero-subtitle">
+          Короткие статьи о нейросетях, AI-инструментах и технологиях будущего.
+          Для тех, кто только начинает свой путь в мир ИИ.
+        </p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">9</span>
+            <span class="stat-label">статей в выпуске</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">38</span>
+            <span class="stat-label">минут чтения</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">понятно новичку</span>
+          </div>
+        </div>
+        <a href="#cards" class="btn-hero">Читать выпуск ↓</a>
+      </div>
+    </section>
+
+    <section class="cards-section" id="cards">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Содержание</span>
+          <h2 class="section-title">Что внутри выпуска</h2>
+        </div>
+        <div class="cards-grid">
+          {% for article in articles %}
+          <a href="{{ article.url }}" target="_blank" rel="noopener" class="card reveal" style="--card-color: {{ article.color }}">
+            <div class="card-glow" style="--glow-color: {{ article.color }}"></div>
+            <div class="card-top">
+              <span class="card-tag" style="background: {{ article.color }}22; color: {{ article.color }}">{{ article.tag }}</span>
+              <span class="card-level">{{ article.level }}</span>
+            </div>
+            <h3 class="card-title">{{ article.title }}</h3>
+            <p class="card-summary">{{ article.summary }}</p>
+            <div class="card-footer">
+              <span class="card-time">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                {{ article.read_time }}
+              </span>
+              <span class="card-arrow" style="color: {{ article.color }}">→</span>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" id="about">
+      <div class="container">
+        <div class="cta-box">
+          <h2 class="cta-title">Не хочешь пропускать выпуски?</h2>
+          <p class="cta-desc">Новый дайджест — каждую неделю. Только самое важное, без воды и технического жаргона.</p>
+          <form class="cta-form" onsubmit="event.preventDefault(); alert('Спасибо! Вы подписаны 🎉')">
+            <input type="email" placeholder="your@email.com" required>
+            <button type="submit" class="btn-cta">Подписаться</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-icon">✦</span>
+          AI Дайджест
+        </div>
+        <p class="footer-text">Просто об искусственном интеллекте. Для всех, кто хочет быть в курсе.</p>
+        <p class="footer-copy">© 2026 AI Дайджест</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
